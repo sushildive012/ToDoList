@@ -78,7 +78,7 @@ body{
     border-radius: 2rem;
 
     /* background-color: aqua; */
-    background: linear-gradient(to right, transparent 0%, black 45%, gray 100%);
+    background: linear-gradient(to right, rgba(0,0,0,0) 0%, black 45%, gray 100%);
     box-shadow: inset 0 0 0 0.2px gray;
 }
 #task-input{
@@ -129,17 +129,19 @@ body{
 #display{
     /* border: 2px solid greenyellow; */
     /* background-color: darkslategray; */
-    background: linear-gradient(to bottom,  darkslategray 70%, transparent 100%);
 
-    background: linear-gradient(to left, transparent 0%, darkslategray 40%, darkslategray 60%, transparent 100%);
+    /* See browsers on IPHONES does not recognise transparent keywords ---so always use rgba() with opacity 0-----and use same color from which transition is happening */
+    background: linear-gradient(to bottom,  darkslategray 70%,  rgba(47,79,79, 0) 100%);
+
+    background: linear-gradient(to left, rgba(47,79,79, 0) 0%, darkslategray 40%, darkslategray 60%,  rgba(47,79,79, 0) 100%);
 
 
     /* mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
     mask-image: linear-gradient(to top, black 90%, transparent 100%); */
 
-    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 79%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, black 10%, black 79%, rgba(0,0,0,0) 100%);
 
-    mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 79%, transparent 100%);
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, black 10%, black 79%, rgba(0,0,0,0) 100%);
 
 
     width: 100%;
@@ -226,7 +228,12 @@ html{
     height: auto;
     margin-bottom: 1rem;           /* Creates spacing beneath the row */
     padding: 0.7rem;
-    background: linear-gradient(to right ,transparent 0%, darkslategray 30%, black 100%);
+
+    /* 1. Mobile Fallback (Syntax: From Right to Left)-----------"right"  NOT "to right" */
+    background: -webkit-linear-gradient(right,rgba(47,79,79,0) 0%, darkslategray 30%, black 100%);
+
+    /* 2. Modern Standard (Syntax: Moving To the Left) */
+    background: linear-gradient(to right ,rgba(47,79,79,0) 0%, darkslategray 30%, black 100%);
 
     
     /* overflow-y: auto; */
