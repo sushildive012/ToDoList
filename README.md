@@ -4,7 +4,7 @@
 
 A clean, animated To-Do List built with **HTML, CSS, and vanilla JavaScript** — no frameworks, no libraries. Tasks persist via `localStorage`.
 
-🔗 **Live Demo:** [https://sushildive012.github.io/ToDoList/](#)
+🔗 **Live Demo:** [Click Here to View](https://sushildive012.github.io/ToDoList/)
 
 <!-- Demo GIF: GitHub renders GIFs inline & auto-plays them (video tags don't).
 Record the add-button click effect as a short screen capture, convert to GIF, then: -->
