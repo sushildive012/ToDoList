@@ -274,9 +274,7 @@ html{
     font-size: 0.9rem;
     
 }
-.listrow:hover{
-    /* box-shadow: 0 0 0 1px white; */
-}
+
 
 #clearAll{
     align-self: flex-end;
