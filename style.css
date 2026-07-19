@@ -1,0 +1,312 @@
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    overflow: hidden; 
+    /* Just kept so in mobile wont move */
+    
+}
+.site-wrapper{
+
+    background-color: rgba(0,0, 0,0.7);
+    background-color: rgba(0,0, 0,1);
+    height: 100vh;
+    /* border: 3px solid yellow; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+    justify-content: flex-start;
+    position: relative;
+    /* padding: 2rem 0 2rem 0; */
+  
+    
+
+}
+
+
+#heading{
+    color: aliceblue;
+    margin-top: 1.5rem;
+    /* border: 1px solid yellow; */
+    z-index: 1;
+    text-shadow: 0 0 10px yellow;
+}
+/* MAIN */
+.container{
+    /* border: 2px solid red; */
+    height:  90%;
+    width: clamp(350px, 50vw, 500px);
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: space-between;
+    
+    /* flex: 1; */
+    padding: 2rem 1rem 2rem 1rem;
+    gap: 1rem;
+    position:absolute;
+    top: 1rem;
+}
+/* ONLY DISPLAY AND CLEAR ALL/DELETE ALL BUTTON */
+.display-container{
+    /* border: 1px solid orange; */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow-y: auto;
+}
+
+#to-do-form{
+    /* border: 2px solid blue; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 4rem;
+    gap: 1rem;
+    /* position: relative; */
+
+
+    /* 50 % height */
+    border-radius: 2rem;
+
+    /* background-color: aqua; */
+    background: linear-gradient(to right, transparent 0%, black 45%, gray 100%);
+    box-shadow: inset 0 0 0 0.2px gray;
+}
+#task-input{
+    flex: 1;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    color: white;
+    padding-left: 2rem;
+    /* padding-bottom: 0.5rem; */
+    font-size: 0.9rem;
+    
+    /* border: 1px solid orange; */
+}
+
+#to-do-form:focus-within{
+    
+    box-shadow: inset 0 0 0 0.2px wheat;
+}
+
+#addTaskBtn{
+    background-color: transparent;
+    border: none; 
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+    box-shadow: 0 0 5px 0.5px black;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    height: 90%;
+    margin-right: 0.2rem;
+    
+    background-color: darkslategray;
+    
+}
+/* To make add button clickable */
+.active{
+    transform: scale(0.95);
+    box-shadow: none;
+    
+}
+
+.add-task-symbol{
+    color: wheat; 
+    font-size: 3rem;
+    /* box-shadow: 0 0 0 0.5px wheat; */
+}
+#display{
+    /* border: 2px solid greenyellow; */
+    /* background-color: darkslategray; */
+    background: linear-gradient(to bottom,  darkslategray 70%, transparent 100%);
+
+    background: linear-gradient(to left, transparent 0%, darkslategray 40%, darkslategray 60%, transparent 100%);
+
+
+    /* mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
+    mask-image: linear-gradient(to top, black 90%, transparent 100%); */
+
+    mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 79%, transparent 100%);
+
+
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    /* gap: 1rem; */
+    overflow-y: auto;
+
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+
+
+    padding-top: 2rem;
+
+
+    border-top-left-radius: 10px;
+    /* border-top-right-radius: 10px; */
+}
+ul{
+    color: aliceblue;
+    list-style: none;
+}
+
+
+
+/* Saying necessary but does not need i guess */
+html{
+     interpolate-size: allow-keywords;
+}
+
+.listrow{
+
+    /* border: 1px solid blue; */
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+    gap: 2rem;
+
+    border-radius: 3px;
+  
+
+
+
+
+    /* For initial state- gliding other list up-down transition */
+    /* max-height: 0; */
+    height: 0;
+    margin-bottom: 0;
+    padding: 0;
+  
+    /* overflow-y: auto; */
+     overflow: hidden;  
+     /*hides everything when heiight is 0 */
+
+
+
+    /* FOR add/deletecTRANSITION FEFCT */
+    /* Starting hidden state */
+    opacity: 0;
+    /* below translate -50px also helped to paragraph vanish quickly and smoothly, otherwise smaller value caused paragraph to stay behind for a while even if parent is vanished */
+    transform: translateY(-50px);
+    transition: opacity 0.3s ease, 
+                height 0.3s ease, 
+                margin-bottom 0.3s ease, 
+                transform 0.3s ease;
+
+
+    /* transition: opacity 0.35s  cubic-bezier(0.25, 1, 0.5, 1),
+                height 0.35s  cubic-bezier(0.25, 1, 0.5, 1),
+                margin-bottom 0.35s  cubic-bezier(0.25, 1, 0.5, 1),
+                transform 0.35s  cubic-bezier(0.25, 1, 0.5, 1); */
+            }
+            /* Ending visible state transition */
+.listrow.show{
+    opacity: 1;
+    transform: translateY(0);
+
+
+    /* for gliding other task up down have dimensions for target li element*/
+    /* max-height: 50px;                  Grows to full height, pushing others down */
+    height: auto;
+    margin-bottom: 1rem;           /* Creates spacing beneath the row */
+    padding: 0.7rem;
+    background: linear-gradient(to right ,transparent 0%, darkslategray 30%, black 100%);
+
+    
+    /* overflow-y: auto; */
+    /* scrollbar-width: none; */
+    box-shadow: 0 0 0 0.5px wheat;
+    
+    
+    
+    overflow: visible;
+}
+
+/* tO COLLAPSE RIGHT after clear all btn clicked */
+.listrow.collapse{
+    transform: translateX(120%); 
+    /* SO collapse on right fast as time transiion is only 0.3s */
+}
+
+
+
+
+
+
+/* 2. Control the paragraph tag */
+.listrow p {
+    
+    /* height: 100%; removed */
+    /* border: 1px solid yellow; */
+    margin: 0;
+    /* Clears default paragraph spacing */
+    flex-grow: 1;                   /* Lets text fill available space safely */
+    
+    /* Crucial text-wrapping fixes (Choose ONE approach below) */
+    word-break: break-word;         /* Option A: Breaks long words onto a new line */
+    
+    
+    /* overflow-y: auto;
+    scrollbar-width: none; */
+    font-size: 0.9rem;
+    
+}
+.listrow:hover{
+    /* box-shadow: 0 0 0 1px white; */
+}
+
+#clearAll{
+    align-self: flex-end;
+    background: none;
+    color: rgba(245, 222, 179, 0.4);
+    border: none;
+    transition: transform 0.1s ease;
+    margin: 1rem;
+}
+#clearAll:hover{
+    transform: scale(1.05);
+    color: rgba(245, 222, 179, 0.7);
+}
+
+.delete-button{
+    background-color: transparent;
+    padding: 0 3px 0 3px;
+    border: none;
+    color: rgba(254, 0, 0, 0);
+    transition: color 0.1s ease;
+    box-shadow: 0 0 0 1px wheat;
+}
+
+.delete-button:hover{
+    color: greenyellow;
+    
+}
+
+
+
+#emptyTaskBtn{
+    padding: 0.7rem;
+    background: none;
+    border: none;
+    color: rgba(245, 222, 179, 0.523);
+    /* box-shadow: 0 0 0 0.1px white; */
+    border-radius: 7px;
+}
+/* For making emptyTaskBtn center by making adding it in parent */
+.center{
+    align-items: center;
+    justify-content: center;
+}
+
