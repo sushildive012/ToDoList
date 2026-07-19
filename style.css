@@ -41,9 +41,9 @@ body{
 .container{
     /* border: 2px solid red; */
     height:  90%;
-    width: clamp(350px, 50vw, 500px);
+    width: clamp(350px, 70vw, 550px);
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     align-items: center;
     justify-content: space-between;
     
@@ -90,6 +90,8 @@ body{
     padding-left: 2rem;
     /* padding-bottom: 0.5rem; */
     font-size: 0.9rem;
+    height: 100%;
+    border-radius: 2rem;
     
     /* border: 1px solid orange; */
 }
@@ -300,9 +302,12 @@ html{
     padding: 0.7rem;
     background: none;
     border: none;
-    color: rgba(245, 222, 179, 0.523);
+    color: rgba(245, 222, 179, 0.422);
     /* box-shadow: 0 0 0 0.1px white; */
     border-radius: 7px;
+}
+#emptyTaskBtn:hover{
+    color: rgba(245, 222, 179, 0.55);
 }
 /* For making emptyTaskBtn center by making adding it in parent */
 .center{
@@ -310,3 +315,47 @@ html{
     justify-content: center;
 }
 
+
+
+/* Media Query for Desktop size */
+@media (min-width: 1024px) {
+
+    #heading{
+        /* border: 2px solid orange; */
+        font-size: 50px;
+    }
+  
+    .container{
+        flex-direction: column-reverse;
+        padding-top: 3.2rem;
+        /* border: 2px solid red; */
+        position: static;
+        height: 100%;
+
+    }
+    .site-wrapper{
+        flex-direction: row;
+        justify-content: center;
+        gap: 7rem;
+    }
+    .site-wrapper{
+        background-image: linear-gradient(
+            to left,
+            rgba(47, 79, 79, 0.7) 0%,
+            rgba(0,0,0,1) 20%, 
+            rgba(0,0,0,1) 70%, 
+            rgba(0,0,0, 0.7) 100%
+            
+            /* rgba(0,0,0,0.65) 100% */
+            ),url(assets/bg.jpg);
+        
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 0%, -300px;
+        /* background-position: center; */
+
+        
+    }
+
+
+}
