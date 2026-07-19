@@ -308,12 +308,11 @@ html{
 
 
 #emptyTaskBtn{
-    padding: 0.7rem;
     background: none;
     border: none;
     color: rgba(245, 222, 179, 0.422);
     /* box-shadow: 0 0 0 0.1px white; */
-    border-radius: 7px;
+    transition: color 0.1s ease;
 }
 #emptyTaskBtn:hover{
     color: rgba(245, 222, 179, 0.55);
