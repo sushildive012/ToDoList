@@ -6,10 +6,10 @@ A clean, animated To-Do List built with **HTML, CSS, and vanilla JavaScript** �
 
 <!-- Demo GIF: GitHub renders GIFs inline & auto-plays them (video tags don't).
      Record the add-button click effect as a short screen capture, convert to GIF, then: -->
-![Demo](assets/demo.gif)
+<!-- ![Demo](assets/demo.gif) -->
 
 <!-- Optional: full video walkthrough (won't autoplay in README, but clickable) -->
-<!-- 🎥 [Watch full demo video](assets/demo.mp4) -->
+🎥 [Watch full demo video](assets/demo.mp4)
 
 ---
 
