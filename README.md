@@ -1,3 +1,5 @@
+
+
 # 📝 To-Do List — Vanilla JS
 
 A clean, animated To-Do List built with **HTML, CSS, and vanilla JavaScript** — no frameworks, no libraries. Tasks persist via `localStorage`.
@@ -9,7 +11,15 @@ A clean, animated To-Do List built with **HTML, CSS, and vanilla JavaScript** �
 ![Demo](assets/demo.gif)
 
 <!-- Optional: full video walkthrough (won't autoplay in README, but clickable) -->
+<<<<<<< HEAD
 <!-- 🎥 [Watch full demo video](assets/demo.mp4) -->
+=======
+<!--🎥 [Watch full demo video](assets/demo.mp4) -->
+
+
+<video src="https://github.com/user-attachments/assets/2baa0388-b4c4-4099-940f-551c1bee21a8" width="350" controls autoplay loop muted></video>
+
+>>>>>>> b43ef80ea7f7fcb8f9844b5d3379415f3615620e
 
 ---
 
